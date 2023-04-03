@@ -33,6 +33,7 @@ fn main() {
 
     while itertimes <= questions.len() - 1 {
         println!("--------------------------------------------");
+        let mut num: &str;
         if rand::thread_rng().gen_range(0..2) == 0 {
             println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ", 
                  questions[itertimes], 
@@ -40,6 +41,7 @@ fn main() {
                  fakeopts1[itertimes], 
                  fakeopts2[itertimes]
                  );
+            num = "1";
             } else if rand::thread_rng().gen_range(0..2) == 1 {
                 println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ",
                          questions[itertimes], 
@@ -47,6 +49,7 @@ fn main() {
                          answers[itertimes],  
                          fakeopts2[itertimes]
                          );
+                num = "2";
                 } else {
                     println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ", 
                              questions[itertimes],  
@@ -54,6 +57,7 @@ fn main() {
                              fakeopts2[itertimes],
                              answers[itertimes] 
                              );
+                    num = "3";
                     }
 
         let mut gottenans = String::new();
@@ -63,7 +67,7 @@ fn main() {
         
         let gottenans: &str = gottenans.trim_end();
         
-        if gottenans == answers[itertimes] {
+        if gottenans == answers[itertimes] || gottenans == num {
             println!("Correct!");
             itertimes+=1;
             } else {
