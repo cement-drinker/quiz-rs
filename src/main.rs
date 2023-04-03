@@ -32,6 +32,7 @@ fn main() {
     let mut itertimes: usize = 0;
 
     while itertimes <= questions.len() - 1 {
+        println!("--------------------------------------------");
         if rand::thread_rng().gen_range(0..2) == 0 {
             println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ", 
                  questions[itertimes], 
