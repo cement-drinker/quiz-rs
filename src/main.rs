@@ -35,31 +35,25 @@ fn main() {
         println!("--------------------------------------------");
         let mut num: &str;
         if rand::thread_rng().gen_range(0..2) == 0 {
-            println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ", 
-                 questions[itertimes], 
-                 answers[itertimes], 
-                 fakeopts1[itertimes], 
-                 fakeopts2[itertimes]
-                 );
+            println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
+            println!("\x1b[93m1. \x1b[0m{0}", fakeopts1[itertimes]);
+            println!("\x1b[93m2.\x1b[0m {0}", answers[itertimes]);
+            println!("\x1b[93m3.\x1b[0m {0}", fakeopts2[itertimes]);
             num = "1";
             } else if rand::thread_rng().gen_range(0..2) == 1 {
-                println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ",
-                         questions[itertimes], 
-                         fakeopts1[itertimes],
-                         answers[itertimes],  
-                         fakeopts2[itertimes]
-                         );
+                println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
+                println!("\x1b[93m1. \x1b[0m{0}", answers[itertimes]);
+                println!("\x1b[93m2.\x1b[0m {0}", fakeopts2[itertimes]);
+                println!("\x1b[93m3.\x1b[0m {0}", fakeopts1[itertimes]);
                 num = "2";
                 } else {
-                    println!("\x1b[95m{0}\x1b[0m\n\x1b[93m1. \x1b[0m{1}\n\x1b[93m2.\x1b[0m {2}\n\x1b[93m3.\x1b[0m {3}\n\nType \x1b[92mAnswer\x1b[0m Here: ", 
-                             questions[itertimes],  
-                             fakeopts1[itertimes],
-                             fakeopts2[itertimes],
-                             answers[itertimes] 
-                             );
+                    println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
+                    println!("\x1b[93m1. \x1b[0m{0}", fakeopts2[itertimes]);
+                    println!("\x1b[93m2.\x1b[0m {0}", fakeopts1[itertimes]);
+                    println!("\x1b[93m3.\x1b[0m {0}", answers[itertimes]);
                     num = "3";
                     }
-
+        println!("\nType \x1b[92mAnswer\x1b[0m Here: "); 
         let mut gottenans = String::new();
         io::stdin()
             .read_line(&mut gottenans)
