@@ -47,22 +47,22 @@ fn main() {
         let mut num: &str;
         if rand::thread_rng().gen_range(0..2) == 0 
         {
-            println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
-            println!("\x1b[93m1. \x1b[0m{0}", fakeopts1[itertimes]);
+            println!("\x1b[92m{0}\x1b[0m", questions[itertimes]);
+            println!("\x1b[93m1.\x1b[0m {0}", fakeopts1[itertimes]);
             println!("\x1b[93m2.\x1b[0m {0}", answers[itertimes]);
             println!("\x1b[93m3.\x1b[0m {0}", fakeopts2[itertimes]);
             num = "2";
         } else if rand::thread_rng().gen_range(0..2) == 1 
         {
-            println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
-            println!("\x1b[93m1. \x1b[0m{0}", answers[itertimes]);
+            println!("\x1b[92m{0}\x1b[0m", questions[itertimes]);
+            println!("\x1b[93m1.\x1b[0m {0}", answers[itertimes]);
             println!("\x1b[93m2.\x1b[0m {0}", fakeopts2[itertimes]);
             println!("\x1b[93m3.\x1b[0m {0}", fakeopts1[itertimes]);
             num = "1";
         } else 
         {
-            println!("\x1b[92m {0} \x1b[0m", questions[itertimes]);
-            println!("\x1b[93m1. \x1b[0m{0}", fakeopts2[itertimes]);
+            println!("\x1b[92m{0}\x1b[0m", questions[itertimes]);
+            println!("\x1b[93m1.\x1b[0m {0}", fakeopts2[itertimes]);
             println!("\x1b[93m2.\x1b[0m {0}", fakeopts1[itertimes]);
             println!("\x1b[93m3.\x1b[0m {0}", answers[itertimes]);
             num = "3";
@@ -93,10 +93,10 @@ fn main() {
     // [[ END MESSAGE ]] //
     if questions_correct == 3 
     {
-        println!("Wohoo! You \x1b[92mwin!\x1b[0m");
+        println!("Wohoo! \x1b[92mYou got a FLAWLESS VICTORY\x1b[0m");
     } else 
     {
-        println!("Wohoo! You \x1b[93mcompleted the quiz!\x1b[0m");
-        println!("\x1b[92m{questions_correct}\x1b[0m/{QUIZLEN} correct");
+        println!("You \x1b[93mcompleted the quiz!\x1b[0m");
+        println!("\x1b[92m{questions_correct}\x1b[0m/{QUIZLEN} questions correct");
     }
 }
